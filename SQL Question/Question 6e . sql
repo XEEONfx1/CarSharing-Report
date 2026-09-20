@@ -1,4 +1,5 @@
 -- Highest average demand month in 2017
+
 SELECT
     MONTHNAME(t.timestamp) AS month,
     ROUND(AVG(c.demand), 4) AS average_demand
@@ -11,15 +12,15 @@ ORDER BY average_demand DESC
 LIMIT 1;
 
 
--- Temperature categories in July 2017
+-- Temperature category frequency in July 2017
+
 SELECT
     CASE
         WHEN CAST(SUBSTRING_INDEX(c.temp_code, '-', 1) AS DECIMAL(10,2)) < 10 THEN 'Cold'
         WHEN CAST(SUBSTRING_INDEX(c.temp_code, '-', 1) AS DECIMAL(10,2)) <= 25 THEN 'Mild'
         ELSE 'Hot'
     END AS temp_category,
-    COUNT(*) AS frequency,
-    ROUND(AVG(c.demand), 4) AS average_demand
+    COUNT(*) AS frequency
 FROM CarSharing_df AS c
 JOIN time AS t
     ON c.id = t.id
@@ -30,6 +31,7 @@ ORDER BY frequency DESC;
 
 
 -- Most prevalent weather condition in July 2017
+
 SELECT
     w.weather,
     COUNT(*) AS frequency
@@ -46,6 +48,7 @@ LIMIT 1;
 
 
 -- Wind speed in July 2017
+
 SELECT
     ROUND(AVG(c.windspeed), 4) AS average_windspeed,
     MAX(c.windspeed) AS maximum_windspeed,
@@ -58,6 +61,7 @@ WHERE YEAR(t.timestamp) = 2017
 
 
 -- Humidity in July 2017
+
 SELECT
     ROUND(AVG(c.humidity), 4) AS average_humidity,
     MAX(c.humidity) AS maximum_humidity,
@@ -70,6 +74,7 @@ WHERE YEAR(t.timestamp) = 2017
 
 
 -- Average demand by temperature category in July 2017
+
 SELECT
     CASE
         WHEN CAST(SUBSTRING_INDEX(c.temp_code, '-', 1) AS DECIMAL(10,2)) < 10 THEN 'Cold'

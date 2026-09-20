@@ -1,0 +1,15 @@
+-- Most prevalent temperature category in 2017
+
+SELECT
+    CASE
+        WHEN CAST(SUBSTRING_INDEX(c.temp_code, '-', 1) AS DECIMAL(10,2)) < 10 THEN 'Cold'
+        WHEN CAST(SUBSTRING_INDEX(c.temp_code, '-', 1) AS DECIMAL(10,2)) <= 25 THEN 'Mild'
+        ELSE 'Hot'
+    END AS temp_category,
+    COUNT(*) AS frequency
+FROM CarSharing_df AS c
+JOIN time AS t
+    ON c.id = t.id
+WHERE YEAR(t.timestamp) = 2017
+GROUP BY temp_category
+ORDER BY frequency DESC;

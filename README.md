@@ -67,7 +67,7 @@ The analysis identified several demand patterns in 2017, including:
 
 ### Author
 
-**Stephen Friday(Xeeon)**
+**Stephen Friday (Xeeon)**
 
 Data Science Student  
 Miva Open University

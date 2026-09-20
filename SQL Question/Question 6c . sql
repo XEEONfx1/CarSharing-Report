@@ -1,6 +1,15 @@
-SELECT HOUR(t.timestamp) AS hour, ROUND(AVG(c.demand), 4) AS average_demand
+-- Question 6c:
+-- For the weekday with the highest average demand in Question 6b
+-- (Friday), calculate the average demand for each hour in 2017.
+-- The results are sorted from the highest average demand to the lowest.
+
+SELECT
+    HOUR(t.timestamp) AS hour,
+    ROUND(AVG(c.demand), 4) AS average_demand
 FROM CarSharing_df AS c
-JOIN time AS t ON C.id = t.id
-WHERE YEAR(t.timestamp) = 2017 AND t.weekday_name = 'Friday'
+JOIN time AS t
+    ON c.id = t.id
+WHERE YEAR(t.timestamp) = 2017
+  AND t.weekday_name = 'Friday'
 GROUP BY HOUR(t.timestamp)
 ORDER BY average_demand DESC;

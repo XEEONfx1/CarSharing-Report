@@ -1,4 +1,13 @@
--- Most prevalent temperature category in 2017
+-- Question 6d:
+-- Analyze weather and temperature conditions in 2017.
+-- Tasks:
+-- 1. Find the most prevalent temperature category.
+-- 2. Find the most prevalent weather condition.
+-- 3. Calculate monthly average, maximum, and minimum wind speed.
+-- 4. Calculate monthly average, maximum, and minimum humidity.
+-- 5. Calculate average demand by temperature category.
+
+-- Task 1: Most prevalent temperature category in 2017
 
 SELECT
     CASE
@@ -14,7 +23,8 @@ WHERE YEAR(t.timestamp) = 2017
 GROUP BY temp_category
 ORDER BY frequency DESC;
 
--- Most prevalent weather condition in 2017
+
+-- Task 2: Most prevalent weather condition in 2017
 
 SELECT
     w.weather,
@@ -29,7 +39,8 @@ GROUP BY w.weather
 ORDER BY frequency DESC
 LIMIT 1;
 
--- Monthly wind speed in 2017
+
+-- Task 3: Monthly wind speed in 2017
 
 SELECT
     MONTHNAME(t.timestamp) AS month,
@@ -43,7 +54,8 @@ WHERE YEAR(t.timestamp) = 2017
 GROUP BY MONTH(t.timestamp), MONTHNAME(t.timestamp)
 ORDER BY MONTH(t.timestamp);
 
--- Monthly humidity in 2017
+
+-- Task 4: Monthly humidity in 2017
 
 SELECT
     MONTHNAME(t.timestamp) AS month,
@@ -57,7 +69,8 @@ WHERE YEAR(t.timestamp) = 2017
 GROUP BY MONTH(t.timestamp), MONTHNAME(t.timestamp)
 ORDER BY MONTH(t.timestamp);
 
--- Average demand by temperature category in 2017
+
+-- Task 5: Average demand by temperature category in 2017
 
 SELECT
     CASE

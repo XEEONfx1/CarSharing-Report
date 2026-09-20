@@ -1,0 +1,6 @@
+SELECT HOUR(t.timestamp) AS hour, ROUND(AVG(c.demand), 4) AS average_demand
+FROM CarSharing_df AS c
+JOIN time AS t ON C.id = t.id
+WHERE YEAR(t.timestamp) = 2017 AND t.weekday_name = 'Friday'
+GROUP BY HOUR(t.timestamp)
+ORDER BY average_demand DESC;

@@ -1,4 +1,15 @@
--- Highest average demand month in 2017
+-- Question 6e:
+-- Analyze the month with the highest average demand in 2017.
+-- Tasks:
+-- 1. Find the month with the highest average demand.
+-- 2. Analyze temperature categories in that month.
+-- 3. Find the most prevalent weather condition.
+-- 4. Calculate average, maximum, and minimum wind speed.
+-- 5. Calculate average, maximum, and minimum humidity.
+-- 6. Calculate average demand by temperature category.
+
+
+-- Task 1: Find the month with the highest average demand in 2017
 
 SELECT
     MONTHNAME(t.timestamp) AS month,
@@ -12,7 +23,7 @@ ORDER BY average_demand DESC
 LIMIT 1;
 
 
--- Temperature category frequency in July 2017
+-- Task 2: Temperature category frequency in July 2017
 
 SELECT
     CASE
@@ -30,7 +41,7 @@ GROUP BY temp_category
 ORDER BY frequency DESC;
 
 
--- Most prevalent weather condition in July 2017
+-- Task 3: Most prevalent weather condition in July 2017
 
 SELECT
     w.weather,
@@ -47,7 +58,7 @@ ORDER BY frequency DESC
 LIMIT 1;
 
 
--- Wind speed in July 2017
+-- Task 4: Wind speed in July 2017
 
 SELECT
     ROUND(AVG(c.windspeed), 4) AS average_windspeed,
@@ -60,7 +71,7 @@ WHERE YEAR(t.timestamp) = 2017
   AND MONTH(t.timestamp) = 7;
 
 
--- Humidity in July 2017
+-- Task 5: Humidity in July 2017
 
 SELECT
     ROUND(AVG(c.humidity), 4) AS average_humidity,
@@ -73,7 +84,7 @@ WHERE YEAR(t.timestamp) = 2017
   AND MONTH(t.timestamp) = 7;
 
 
--- Average demand by temperature category in July 2017
+-- Task 6: Average demand by temperature category in July 2017
 
 SELECT
     CASE

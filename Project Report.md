@@ -32,6 +32,7 @@ The MySQL database is named `carsharing` and contains four main tables:
 - `weather` — Weather conditions and weather codes.
 - `temperature` — Temperature information and temperature categories.
 - `time` — Date and time-related information.
+- https://docs.google.com/spreadsheets/d/1SLkrLhcKHDwBgzuwQZ66WhakbEL586xDZYEmsoePr-w/edit?usp=drive_link
 
 ## 5. Data Cleaning and Preparation
 

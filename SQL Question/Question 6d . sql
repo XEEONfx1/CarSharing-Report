@@ -86,7 +86,7 @@ WHERE YEAR(t.timestamp) = 2017
 GROUP BY temp_category
 ORDER BY average_demand DESC;
 
-### Monthly Wind Speed in 2017
+
 
 | Month | Average Wind Speed | Maximum Wind Speed | Minimum Wind Speed |
 |---|---:|---:|---:|
@@ -103,7 +103,7 @@ ORDER BY average_demand DESC;
 | November | 12.1016 | 37 | 0 |
 | December | 10.8014 | 43 | 0 |
 
-### Monthly Humidity in 2017
+
 
 | Month | Average Humidity | Maximum Humidity | Minimum Humidity |
 |---|---:|---:|---:|

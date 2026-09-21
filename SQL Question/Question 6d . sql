@@ -85,3 +85,37 @@ JOIN time AS t
 WHERE YEAR(t.timestamp) = 2017
 GROUP BY temp_category
 ORDER BY average_demand DESC;
+
+### Monthly Wind Speed in 2017
+
+| Month | Average Wind Speed | Maximum Wind Speed | Minimum Wind Speed |
+|---|---:|---:|---:|
+| January | 13.7654 | 39 | 0 |
+| February | 15.5774 | 52 | 0 |
+| March | 15.9677 | 41 | 0 |
+| April | 15.8000 | 41 | 0 |
+| May | 12.4170 | 41 | 0 |
+| June | 11.8307 | 35 | 0 |
+| July | 12.0225 | 57 | 0 |
+| August | 12.4050 | 43 | 0 |
+| September | 11.5753 | 41 | 0 |
+| October | 10.8916 | 37 | 0 |
+| November | 12.1016 | 37 | 0 |
+| December | 10.8014 | 43 | 0 |
+
+### Monthly Humidity in 2017
+
+| Month | Average Humidity | Maximum Humidity | Minimum Humidity |
+|---|---:|---:|---:|
+| January | 56.3531 | 100 | 28 |
+| February | 53.3002 | 100 | 8 |
+| March | 56.1293 | 100 | 0 |
+| April | 66.0764 | 100 | 22 |
+| May | 71.5785 | 100 | 24 |
+| June | 58.6095 | 100 | 20 |
+| July | 60.2022 | 94 | 17 |
+| August | 62.0588 | 94 | 17 |
+| September | 74.8517 | 100 | 25 |
+| October | 71.6163 | 100 | 29 |
+| November | 64.1896 | 100 | 27 |
+| December | 65.1309 | 100 | 25 |
